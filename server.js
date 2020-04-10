@@ -1,10 +1,35 @@
 "use strict";
 
-var webSocketServer = require('websocket').server;
-var http = require('http');
+const webSocketServer = require('websocket').server;
+const http = require('http');
+const helmet = require('helmet');
+const expressApp = require('express')();
+const cspHeaders = require('./csp-headers.json');
 
-var webSocketsServerPort = 1337;
-var server = http.createServer(function(request, response) {});
+const webSocketsServerPort = 1337;
+
+expressApp.use(
+	helmet({
+		contentSecurityPolicy: {
+			directives: cspHeaders,
+			browserSniff: false
+		},
+		dnsPrefetchControl: false,
+		expectCt: 'enforce',
+		frameguard: true,
+		hidePoweredBy: true,
+		hpkp: false,
+		hsts: true,
+		ieNoOpen: true,
+		noCache: false,
+		noSniff: true,
+		referrerPolicy: false,
+		xssFilter: true
+	})
+);
+
+
+const server = http.createServer(expressApp);
 
 server.listen(webSocketsServerPort, function() {
     console.log((new Date()) + " Server is listening on port "

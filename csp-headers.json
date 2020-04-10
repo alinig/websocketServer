@@ -1,0 +1,13 @@
+{
+	"worker-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "data:", "'self'"],
+	"frame-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "data:", "'self'"],
+	"connect-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "data:", "'self'"],
+	"frame-ancestors": ["'self'"],
+	"default-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "'self'"],
+	"media-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "data:", "'self'"],
+	"object-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "data:", "'self'"],
+	"font-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "data:", "'self'"],
+	"img-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "data:", "'self'"],
+	"script-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "'self'", "'unsafe-inline'"],
+	"style-src": ["*.pagseguro.uol.com.br", "*.pagseguro.com.br", "'self'", "'unsafe-inline'"]
+}
