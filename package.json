@@ -11,8 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "express-ws": "^4.0.0",
     "helmet": "^3.22.0",
-    "prettier": "^2.0.4",
-    "websocket": "^1.0.31"
+    "prettier": "^2.0.4"
   }
 }

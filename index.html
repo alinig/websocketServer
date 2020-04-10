@@ -28,28 +28,6 @@
 		console.log('Enviando a seguinte mensagem ao server: ', msg);
 	}
 
-	function start() {
-		var counter = 0;
-		loop = setInterval(() => {
-				counter++;
-				document.querySelector('#contador').innerText = counter.toString();
-  				sendMsg(msg);
-		}, 50000);
-	};
-
-	function fireLoop() {
-		if(loop > 0) {
-			clearInterval(loop);
-			loop = false;
-			document.querySelector('#controle').innerText=' Iniciar Ping ';
-			stop();
-		}
-		else {
-			document.querySelector('#controle').innerText = " Parar Ping";
-			start();
-		}
-	}
-
 	function closeConn() {
 		if (socket.readyState === WebSocket.OPEN) {
 		    socket.close();
@@ -70,7 +48,6 @@
 <h3 id="contador">0</h3>
 <div>
 	<button id="open" onclick="assureWebsocketOn()"> Abrir Conexão </button>
-	<button id="controle" onclick="fireLoop()"> Iniciar Ping </button>
 	<button id="transactionCreate" onclick="transactionCreate()"> Solicitar Transaction </button>
 	<button id="stop" onclick="closeConn()"> Fechar Conexão </button>
 </div>
